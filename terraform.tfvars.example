@@ -1,0 +1,12 @@
+# ─────────────────────────────────────────
+# EXAMPLE VALUES — safe to commit to Git
+# Copy this file to terraform.tfvars
+# and fill in your real values
+# ─────────────────────────────────────────
+
+aws_region    = "us-east-1"
+project_name  = "data-platform"
+environment   = "dev"
+key_pair_name = "your-key-pair-name"
+db_username   = "admin"
+db_password   = "your-secure-password-here"

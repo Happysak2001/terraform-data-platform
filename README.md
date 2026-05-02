@@ -33,7 +33,7 @@ Inside VPC:
 
 | Phase | Component | Purpose |
 |---|---|---|
-| 1 | S3 + DynamoDB | Terraform remote state & locking |
+| 1 | S3 + Native S3 Lockfile | Terraform remote state & locking |
 | 2 | VPC, Subnets, IGW, Route Tables | Network foundation |
 | 3 | Security Groups, EC2 | Processing server & firewall rules |
 | 4 | RDS MySQL | Managed database in private subnet |
@@ -151,7 +151,7 @@ cloudwatch_logs = "/aws/lambda/data-platform-ingestion"
 - EC2 security group — SSH only
 - RDS security group — MySQL from EC2 only
 - IAM least privilege — each service has minimum permissions
-- S3 state bucket — encrypted, versioned, private
+- S3 state bucket — encrypted, versioned, private, with native S3 lockfile
 - Secrets managed via terraform.tfvars — never committed to Git
 
 ---
